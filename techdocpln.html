@@ -49,7 +49,6 @@
 
 }
 
-
 /* Margin-left, same as the width of the navbar */
 .main {
   margin-left: 250px; 
@@ -72,49 +71,24 @@
 }
 
 
-}
 
 </style>
 
 
-<!--User Story #1-->
+
 <main class="maincomplete" id="main-doc">
 
-<div class="main">
-
-    
 
 
-    <!--User Story #8, nav element-->
-
-<nav id="navbar">
-    <!--User Story #9, header element-->
-    
-    
-    <!--User Story #10, #11, #12-->
-    <ul class="main-list">
-    <li><a class="nav-link" href="#Machine_Learning_Techniques_for_Intrusion_Detection">Machine Learning Techniques for Intrusion Detection</a></li>
-    <li><a class="nav-link" href="#Supervised_vs_Unsupervised_Algorithms">Supervised vs Unsupervised Algorithms</a></li>  
-    <li><a class="nav-link" href="#Use_of_Machine_Learning_with_Intrusion_Detection">Use of Machine Learning with Intrusion Detection</a></li> 
-    <li><a class="nav-link" href="#Machine_Learning_and_the_Future">Machine Learning and the Future</a></li>
-    <li><a class="nav-link" href="#In_Summary">In Summary</a></li> 
-    </ul>
-
-</nav>
-</div>
-
-
-<!--User Story #2, 5 min sections--> 
-<!--User Story #4-->   
 <section class="main-section" id="Machine_Learning_Techniques_for_Intrusion_Detection">
 <!--User Story #3, header element-->
 <header id="Machine_Learning_Techniques_for_Intrusion_Detection">
 <h1>Machine Learning Techniques for Intrusion Detection</h1>
 <h3>by Natalie Gilmore, 04/22/2020</h3>
 </header>
-<!--User Story #5-->
+
 <p>
-    Intrusion detection systems (IDS) utilize Machine Learning (ML) algorithms, Artificial Intelligence (AI) algorithms, and metrics, as a basic foundation to examine the dynamic change of data modified on a network or a host computer.  The testing perspective is to take a snapshot of data that has either been sitting on a host computer, hard drive, or in motion on a network, and then a comparison is made between past and future data.  This aids in determining when and where the cyber-attack or malicious attack originated.  From research explored, and focusing on Machine Learning, there are three types of problems that need to be solved with data, that is 1) classification, 2)regression, and 3) clustering.  And from these three types, the following techniques are chosen, which include both supervised (classification) and unsupervised (clustering) learning (Ray., 2019, p. 1).  
+    Intrusion detection systems (IDS) utilize Machine Learning (ML) algorithms, Artificial Intelligence (AI) algorithms, and metrics, as a basic foundation to examine the dynamic change of data modified on a network or a host computer.  The testing perspective is to take a snapshot of data that has either been sitting on a host computer, hard drive, or in motion on a network, and then a comparison is made between past and future data.  This aids in determining when and where the cyber-attack or malicious attack originated.  From research explored, and focusing on Machine Learning, there are three types of problems that need to be solved with data, that is 1) classification, 2) regression, and 3) clustering.  And from these three types, the following techniques are chosen, which include both supervised (classification) and unsupervised (clustering) learning (Ray., 2019, p. 1).  
 </p><br>
 <p>
     <h3>ML Data Sort Types:</h3>
@@ -141,7 +115,7 @@
 <h3>Supervised vs Unsupervised Algorithms</h3>
 </header>
 <p>
-    Supervised algorithms are linear whereas unsupervised algorithms are non-linear with data manipulation.  It was found that "supervised algorithms, in general, show better classification accuracy on the data with known attacks…." (Zamani & Movahedi, 2015, p. 4).  One example of a supervised method, a Machine Learning algorithm, is a Decision Tree algorithm (Ray., 2019, p. 3).  With known results, the Decision Tree algorithm achieved the best results, with a "95% true positive rate, 1% false-positive rate" (Zamani & Movahedi, 2015, p. 4).  While this is a great result, in reality, with unseen cyber-attacks, the "detection rate of supervised methods decreases significantly" (Zamani & Movahedi, 2015, p. 4).  Unsupervised algorithms have a better outcome,  a greater accuracy for both unseen and seen cyber-attack types (Zamani & Movahedi, 2015, p. 4).  Other examples of both supervised and unsupervised algorithms are Decision Tree, Support Vector Machines, K-Nearest Neighbor, Multilayer Perceptron, k-Means Clustering, single linkage clustering, and gamma-algoritm (Zamani & Movahedi, 2015, p. 3).
+    Supervised algorithms are linear whereas unsupervised algorithms are non-linear with data manipulation.  It was found that "supervised algorithms, in general, show better classification accuracy on the data with known attacks…." (Zamani & Movahedi, 2015, p. 4).  One example of a supervised method, a Machine Learning algorithm, is a Decision Tree algorithm (Ray., 2019, p. 3).  With known results, the Decision Tree algorithm achieved the best results, with a "95% true positive rate, 1% false-positive rate" (Zamani & Movahedi, 2015, p. 4).  While this is a great result, in reality, with unseen cyber-attacks, the "detection rate of supervised methods decreases significantly" (Zamani & Movahedi, 2015, p. 4).  Unsupervised algorithms have a better outcome,  a greater accuracy for both unseen and seen cyber-attack types (Zamani & Movahedi, 2015, p. 4).  Other examples of both supervised and unsupervised algorithms are Decision Tree, Support Vector Machines, K-Nearest Neighbor, Multilayer Perceptron, k-Means Clustering, single linkage clustering, and gamma-algorithm (Zamani & Movahedi, 2015, p. 3).
 </p>
 
     <h4>Data Manipulation:</h4>
@@ -186,8 +160,35 @@
     <ul>
     <li>Tier 1: unsupervised clustering algorithm
         TCP/UDP: two 'clusters' are built representing normal and abnormal traffic.</li> 
+     <li>Research: capture network traffic, raw data packets</li> 
     <li>Tier 2: anomaly detection algorithm that learns and redefines it's accuracy based on the data available on the packet payload content.</li>
     (Zamani & Movahedi, 2015, p.4)
+    </ul>
+    <br>
+    <ul>
+        <li><h4>Model Wifi Traffic:</h4></li>
+        
+	    <li><h5>Take snapshots of data packets on network:</h5></li>
+        <li>Seen Data: take snapshot of data using tcpdump.  See Figures 1 and 2.</li>
+        <li>Unseen Data: data to compare, current received data snapshot. </li>
+        <li>Baseline: reference to compare = Seen Data</li>
+        <li>Compare captured data (reference) to a recent view of captured data (unseen)</li>
+        <li>Anomaly: catching an issue based on k-Means Clustering</li>
+        <li>Run Seen and Unseen Data through script to sort by k-Means Cluster</li>
+        <li>Compare Seen and Unseen Data, consider what information is typical and what is the anomaly.  Test packet data count, length.</li>
+        <li>Repeat Process</li>
+	    
+    </ul>
+        <h5>Figure 1.</h5>
+        <img src="https://github.com/ngil542/rawdata_pub/blob/main/rd_2022-03-28%2017-19-24.png">
+        <br>
+
+        <h5>Figure 2.</h5>
+        <img src="https://github.com/ngil542/rawdata_pub/blob/main/rd_2022-03-28%2017-24-13r.png">
+        <br>
+
+
+
 
 </p>
 <br>
@@ -348,9 +349,6 @@
     </ul>
 </p>
 </section>
-
-
-
 
 <footer>2022 by N.Gilmore, Machine Learning Techniques, CS814 - Date: 2020</footer>
 </main>
