@@ -38,9 +38,9 @@
   
 <h3>Supervised vs Unsupervised Algorithms</h3>
 
-<p>
+	<p>
     Supervised algorithms are linear whereas unsupervised algorithms are non-linear with data manipulation.  It was found that "supervised algorithms, in general, show better classification accuracy on the data with known attacks…." (Zamani & Movahedi, 2015, p. 4).  One example of a supervised method, is the Decision Tree algorithm (Ray., 2019, p. 3).  With known results, the Decision Tree algorithm achieved the best results, with a "95% true positive rate, 1% false-positive rate" (Zamani & Movahedi, 2015, p. 4).  While this is a great result, in reality, with unseen cyber-attacks, the "detection rate of supervised methods decreases significantly" (Zamani & Movahedi, 2015, p. 4).  It was found that unsupervised algorithms have a better overall outcome, and a greater accuracy for both unseen and seen cyber-attack types (Zamani & Movahedi, 2015, p. 4).  Other examples of both supervised and unsupervised algorithms are Decision Tree, Support Vector Machines, K-Nearest Neighbor, Multilayer Perceptron, k-Means Clustering, single linkage clustering, and gamma-algorithm (Zamani & Movahedi, 2015, p. 3).
-</p>
+	</p>
 
     <h4>Data Manipulation:</h4>
     <p>
@@ -72,11 +72,11 @@
 
 <h3>Use of Machine Learning with Intrusion Detection</h3>
 
-<p>
+	<p>
     Another area that seems very difficult to comprehend, is the use of Machine Learning to detect an intrusion across a very large, high traffic network.  It becomes complicated due to the varying amounts of data transmitted and received at any given time.  The advantages of using Machine Learning for large systems is the ability to 'train the algorithm' which is "to train a system with training patterns" for all types.(Zamani & Movahedi, 2015, p. 5)
-</p>
+	</p>
 
-<p>
+	<p>
     Based on the journal literature, (Zamani & Movahedi, 2015), one has to look at the best type of algorithm to test over a TCP/IP network.  After evaluation, and considering which type of ML algorithm will perform in the most accurate manner due to seen and unseen cyber-attacks, unsupervised techniques are used.  Seen data is known data whereas unseen data is not known.  A baseline of data is used in reference to detect an anomaly, thereby seeing an intrusion.  How this is implemented and tested is by design.  One example of this is "a 2-tier anomaly-based architecture for IDS in TCP/IP networks" (Zamani & Movahedi, 2015, p.4).  See as described below.
     <br>
     <ul>
@@ -100,7 +100,7 @@
         <li>Compare Seen and Unseen Data, consider what information is typical and what is the anomaly.  Test packet data count, length.</li>
         <li>Repeat Process</li>
 	    
-    </ul>
+    	</ul>
         <h5>Figure 1.</h5>
         <img id="fig1" src="rd_2022-03-28 17-19-24.png">
         <br>
@@ -109,9 +109,9 @@
         <img id="fig2" src="rd_2022-03-28 17-24-13r.png">
         <br>
 
-</p>
-<br>
-<p>
+	</p>
+	<br>
+	<p>
 	<h4>Methods for looking at Incoming Network Data</h4>
 	<ul>
 		<li>Use Packet Sniffer Software: Perl, Netstat, Tcpdump, etc.</li>
@@ -121,14 +121,14 @@
 		
 	</ul>
 		<h5>(DDoS attack types & mitigation methods | Imperva. (2021, February 14))</h5>
-</p>
+	</p>
 
 
 
-<p>
-    <h4>Unsupervised Learning: K-Means Algorithm</h4>
+	<p>
+    	<h4>Unsupervised Learning: K-Means Algorithm</h4>
 
-    <ul>
+    	<ul>
         <li>Specify the number of k of clusters to assign.</li>
         <li>Randomly initialize k centroids.</li>
         <li>repeat</li>
@@ -136,14 +136,14 @@
         <li>maximization: Compute the new centroid (mean) of each cluster.</li>
         <li>until (until the next centroid positions do not change).</li>
 
-    </ul>
-    <h5>(VanderPlas, J., 2022)</h5>
+    	</ul>
+   	 <h5>(VanderPlas, J., 2022)</h5>
         
     
-    <h4>Example of K-Means Cluster Model</h4>
-    <h5>1. Python Scikit Header</h5>
+    	<h4>Example of K-Means Cluster Model</h4>
+    	<h5>1. Python Scikit Header</h5>
     
-    <p>
+    	<p>
       
         <ul class="code_box1">
         <li>%matplotlib inline</li>
@@ -152,12 +152,12 @@
         <li>import numpy as np</li>
         </ul>
         <h5>(VanderPlas, J., 2022)</h5>
-    </p>
+    	</p>
 
 
-    <h5>2. Generate Plot of Random Data</h5>
+    	<h5>2. Generate Plot of Random Data</h5>
     
-    <p>
+    	<p>
       
         <ul class="code_box2">
         <li>from sklearn.datasets.samples_generator import make_blobs</li>
@@ -167,12 +167,12 @@
         
         </ul>
         <h5>(VanderPlas, J., 2022)</h5>
-    </p>
+    	</p>
 
     
-    <h5>3. Separate Data into Clusters</h5>
+    	<h5>3. Separate Data into Clusters</h5>
 
-    <p>
+    	<p>
 
         <ul class="code_box3">
         <li>from sklearn.cluster import KMeans</li>
@@ -183,12 +183,12 @@
 
         </ul>
         <h5>(VanderPlas, J., 2022)</h5>
-    </p>
-    </code>
+    	</p>
+    	</code>
 
    
-    <h5>4. Label Sorted Data Clusters</h5>
-    <p>
+    	<h5>4. Label Sorted Data Clusters</h5>
+    	<p>
         <ul class="code_box4">
         <li>plt.scatter(X[:, 0], X[:, 1], c=y_kmeans, s=50, cmap='viridis')</li>
 
@@ -197,12 +197,12 @@
     
 	</ul>
         <h5>(VanderPlas, J., 2022)</h5>
-    </p>
+    	</p>
     
 
    
-    <h5>5. K-Means Algorithm: Expectation-Maximization</h5>
-    <p>
+    	<h5>5. K-Means Algorithm: Expectation-Maximization</h5>
+    	<p>
 
         <ul class="code_box5">
             <li>from sklearn.metrics import pairwise_distances_argmin</li>
@@ -214,7 +214,7 @@
             <li>centers = X[i]</li>
             <br>
     
-        <li>while True:</li>
+            <li>while True:</li>
             <li># 2a. Assign labels based on closest center</li>
             <li>labels = pairwise_distances_argmin(X, centers)</li>
         
@@ -234,7 +234,7 @@
             <li>s=50, cmap='viridis');</li>
             </ul>
             <h5>(VanderPlas, J.,2022)</h5>
-    </p>
+    	</p>
     
 	<p>
 		<h4>Modeling Server Data</h4>
@@ -252,20 +252,20 @@
 	</p>
 
 
-<h2>Machine Learning and the Future</h2>
+	<h2>Machine Learning and the Future</h2>
 
-<p>
+	<p>
     Machine Learning techniques are important for intrusion detection because they are algorithms and software that are built into intrusion detection systems.  This area of research is important because every day someone is being hacked, which could be at home on a PC, or on the cell phone, or in the workplace.  This is an ongoing problem in our daily lives.  Bluetooth is one of the most vulnerable technologies to hacking and needs to be re-invented for security reasons.  The use of the Internet of Things in systems is also at risk.  As we become more dependent on these communication systems, this may eventually lead to reinforcing public or government regulations.    
-</p>
+	</p>
 
 
 
-<h2>In Summary</h2>
+	<h2>In Summary</h2>
 
-<p>
+	<p>
     In closing, the outcome from this research is that behind solving intrusion detection and using Machine Learning, Intrusion Detection Systems are built.  Machine Learning algorithms are used to solve today's problems and guided to solving other issues as these algorithms learn in a certain way.  These algorithms are used for prediction, medical diagnosis, search engines, chatbots, data mining, biometrics, and imaging.  The idea of looking at the behavior through the eyes of a Machine that has Learned from not only data resulting in our modeling, but also from real-world testing, is intriguing.
-</p>
-<br>
+	</p>
+	<br>
 
 
 <h3>References</h3>
