@@ -49,6 +49,9 @@ body {
     background-color:#c5c5c7;
 }
 
+h4 {
+    font-weight: bold;
+}
 
 h5 {
     font-family: 'Courier New', Courier, monospace;
