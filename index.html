@@ -1,298 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    	<meta charset="UTF-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
-    	<title>Machine Learning and Intrusion Detection Research</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-
-<body>
-
-
-<h1>Machine Learning Techniques for Intrusion Detection</h1>
-<h3>by Natalie Gilmore, 04/22/2020</h3>
-
-
-<p>
-    Intrusion detection systems (IDS) utilize Machine Learning (ML) algorithms, Artificial Intelligence (AI) algorithms, and metrics, as a basic foundation for examining the dynamic change of data modified on a network or a host computer.  The testing perspective is to take a snapshot of data that has either been sitting on a host computer, hard drive, or in motion on a network, and then a comparison is made between past and future data.  This aids in determining when and where the cyber-attack or malicious attack originated.  From research explored, and focusing on Machine Learning, there are three types of problems that need to be solved using the data: 1) classification, 2) regression, and 3) clustering.  And from these three types, the following techniques are approached, which include both supervised and unsupervised learning (Ray., 2019, p. 1).  
-</p><br>
-<p>
-    <h4>Machine Learning Data Sort Types:</h4>
-    <ul>
-        <li>Classification</li>
-        <li>Regression</li>
-	<li>Clustering</li>
-    </ul> 
-
-</p>
-<p>
-    <h4>Machine Learning Techniques:</h4>
-    <ul>
-        <li>Supervised Learning: both the classification and regression of the data</li>
-        <li>Unsupervised Learning: clustering of the data</li>
-    </ul>
-</p>
-<br>
-  
-<h3>Supervised vs Unsupervised Algorithms</h3>
-
-	<p>
-    Supervised algorithms are linear whereas unsupervised algorithms are non-linear with data manipulation.  It was found that "supervised algorithms, in general, show better classification accuracy on the data with known attacks…." (Zamani & Movahedi, 2015, p. 4).  One example of a supervised method, is the Decision Tree algorithm (Ray., 2019, p. 3).  With known results, the Decision Tree algorithm achieved the best results, with a "95% true positive rate, 1% false-positive rate" (Zamani & Movahedi, 2015, p. 4).  While this is a great result, in reality, with unseen cyber-attacks, the "detection rate of supervised methods decreases significantly" (Zamani & Movahedi, 2015, p. 4).  It was found that unsupervised algorithms have a better overall outcome, and a greater accuracy for both unseen and seen cyber-attack types (Zamani & Movahedi, 2015, p. 4).  Other examples of both supervised and unsupervised algorithms are Decision Tree, Support Vector Machines, K-Nearest Neighbor, Multilayer Perceptron, k-Means Clustering, single linkage clustering, and gamma-algorithm (Zamani & Movahedi, 2015, p. 3).
-	</p>
-
-    <h4>Data Manipulation:</h4>
-    <p>
-        Supervised = linear <br>
-        Unsupervised = non-linear
-    </p>
-
-    <h4>Machine Learning Methods:</h4>
-    <p>
-        <h5>Supervised ML:</h5>
-        
-	<ul>
-        <li>Decision three</li>
-        <li>Support Vector Machines</li>
-        <li>K-Nearest Neighbor</li>
-        <li>Multilayer Perceptron</li>
-        </ul>
-        
-        <h5>Unsupervised ML:</h5>
-
-        <ul>   
-        <li>K-Means Clustering</li>
-        <li>single linkage clustering</li>
-        <li>gamma-algorithm</li>
-        </ul> 
-
-    	</p>
-
-
-<h3>Use of Machine Learning with Intrusion Detection</h3>
-
-	<p>
-    Another area that seems very difficult to comprehend, is the use of Machine Learning to detect an intrusion across a very large, high traffic network.  It becomes complicated due to the varying amounts of data transmitted and received at any given time.  The advantages of using Machine Learning for large systems is the ability to 'train the algorithm' which is "to train a system with training patterns" for all types.(Zamani & Movahedi, 2015, p. 5)
-	</p>
-
-	<p>
-    Based on the journal literature, (Zamani & Movahedi, 2015), one has to look at the best type of algorithm to test over a TCP/IP network.  After evaluation, and considering which type of ML algorithm will perform in the most accurate manner due to seen and unseen cyber-attacks, unsupervised techniques are used.  Seen data is known data whereas unseen data is not known.  A baseline of data is used in reference to detect an anomaly, thereby seeing an intrusion.  How this is implemented and tested is by design.  One example of this is "a 2-tier anomaly-based architecture for IDS in TCP/IP networks" (Zamani & Movahedi, 2015, p.4).  See as described below.
-    <br>
-    <ul>
-    <li>Tier 1: unsupervised clustering algorithm
-        TCP/UDP: two 'clusters' are built representing normal and abnormal traffic.</li> 
-     <li>Research: capture network traffic, raw data packets</li> 
-    <li>Tier 2: anomaly detection algorithm that learns and redefines it's accuracy based on the data available on the packet payload content.</li>
-    (Zamani & Movahedi, 2015, p.4)
-    </ul>
-    <br>
-    <ul>
-        <li><h4>Model Wifi Traffic:</h4></li>
-        
-	<li>Take snapshots of data packets on network</li>
-        <li>Seen Data: take snapshot of data using tcpdump.  See Figures 1 and 2.</li>
-        <li>Unseen Data: data to compare, current received data snapshot. </li>
-        <li>Baseline: reference to compare = Seen Data</li>
-        <li>Compare captured data (reference) to a recent view of captured data (unseen)</li>
-        <li>Anomaly: catching an issue based on k-Means Clustering</li>
-        <li>Run Seen and Unseen Data through script to sort by k-Means Cluster</li>
-        <li>Compare Seen and Unseen Data, consider what information is typical and what is the anomaly.  Test packet data count, length.</li>
-        <li>Repeat Process</li>
-	    
-    	</ul>
-        <h5>Figure 1.</h5>
-        <img id="fig1" src="rd_2022-03-28 17-19-24.png">
-        <br>
-
-        <h5>Figure 2.</h5>
-        <img id="fig2" src="rd_2022-03-28 17-24-13r.png">
-        <br>
-
-	</p>
-	<br>
-	<p>
-	<h4>Methods for looking at Incoming Network Data</h4>
-	<ul>
-		<li>Use Packet Sniffer Software: Perl, Netstat, Tcpdump, etc.</li>
-		<li>Determine if data is an email, video, social media, etc.</li>
-		<li>Sort, cluster data,...</li>
-		<li>Consider Intrusion Types, DDOS.. Protocol Attacks (packets per second) (Pps), etc.</li>
-		
-	</ul>
-		<h5>(DDoS attack types & mitigation methods | Imperva. (2021, February 14))</h5>
-	</p>
-
-
-
-	<p>
-    	<h4>Unsupervised Learning: K-Means Algorithm</h4>
-
-    	<ul>
-        <li>Specify the number of k of clusters to assign.</li>
-        <li>Randomly initialize k centroids.</li>
-        <li>repeat</li>
-        <li>expectation: Assign each point to its closes centroid</li>
-        <li>maximization: Compute the new centroid (mean) of each cluster.</li>
-        <li>until (until the next centroid positions do not change).</li>
-
-    	</ul>
-   	 <h5>(VanderPlas, J., 2022)</h5>
-        
-    
-    	<h4>Example of K-Means Cluster Model</h4>
-    	<h5>1. Python Scikit Header</h5>
-    
-    	<p>
-      
-        <ul class="code_box1">
-        <li>%matplotlib inline</li>
-        <li>import matplotlib.pyplot as plt</li>
-        <li>import seaborn as sns; sns.set()  # for plot styling</li>
-        <li>import numpy as np</li>
-        </ul>
-        <h5>(VanderPlas, J., 2022)</h5>
-    	</p>
-
-
-    	<h5>2. Generate Plot of Random Data</h5>
-    
-    	<p>
-      
-        <ul class="code_box2">
-        <li>from sklearn.datasets.samples_generator import make_blobs</li>
-        <li>X, y_true = make_blobs(n_samples=300, centers=4,
-                       cluster_std=0.60, random_state=0)</li>
-        <li>plt.scatter(X[:, 0], X[:, 1], s=50);</li>
-        
-        </ul>
-        <h5>(VanderPlas, J., 2022)</h5>
-    	</p>
-
-    
-    	<h5>3. Separate Data into Clusters</h5>
-
-    	<p>
-
-        <ul class="code_box3">
-        <li>from sklearn.cluster import KMeans</li>
-        <li>kmeans = KMeans(n_clusters=4)</li>
-        <li>kmeans.fit(X)</li>
-        <li>y_kmeans = kmeans.predict(X)</li>
-
-
-        </ul>
-        <h5>(VanderPlas, J., 2022)</h5>
-    	</p>
-    	</code>
-
-   
-    	<h5>4. Label Sorted Data Clusters</h5>
-    	<p>
-        <ul class="code_box4">
-        <li>plt.scatter(X[:, 0], X[:, 1], c=y_kmeans, s=50, cmap='viridis')</li>
-
-        <li>centers = kmeans.cluster_centers_</li>
-        <li>plt.scatter(centers[:, 0], centers[:, 1], c='black', s=200, alpha=0.5);</li>
-    
-	</ul>
-        <h5>(VanderPlas, J., 2022)</h5>
-    	</p>
-    
-
-   
-    	<h5>5. K-Means Algorithm: Expectation-Maximization</h5>
-    	<p>
-
-        <ul class="code_box5">
-            <li>from sklearn.metrics import pairwise_distances_argmin</li>
-
-            <li>def find_clusters(X, n_clusters, rseed=2):</li>
-            <li># 1. Randomly choose clusters</li>
-            <li>rng = np.random.RandomState(rseed)</li>
-            <li>i = rng.permutation(X.shape[0])[:n_clusters]</li>
-            <li>centers = X[i]</li>
-            <br>
-    
-            <li>while True:</li>
-            <li># 2a. Assign labels based on closest center</li>
-            <li>labels = pairwise_distances_argmin(X, centers)</li>
-        
-            <li># 2b. Find new centers from means of points</li>
-            <li>new_centers = np.array([X[labels == i].mean(0)</li>
-                <li>for i in range(n_clusters)])</li>
-        
-            <li># 2c. Check for convergence</li>
-            <li>if np.all(centers == new_centers):</li>
-            <li>    break</li>
-            <li>centers = new_centers</li>
-    
-            <li>return centers, labels</li>
-
-            <li>centers, labels = find_clusters(X, 4)</li>
-            <li>plt.scatter(X[:, 0], X[:, 1], c=labels,</li>
-            <li>s=50, cmap='viridis');</li>
-            </ul>
-            <h5>(VanderPlas, J.,2022)</h5>
-    	</p>
-    
-	<p>
-		<h4>Modeling Server Data</h4>
-		<ul>
-			<li>Use example server data from www.kaggle.com</li>
-			<li>Sort incoming data from source and destination IP/name</li>
-			<li>Sort protocol type: TCP, UDP, ICMP, etc.</li>
-			<li>Compute averages: time, duration, packet sizes, etc</li>
-			<li>Implement k-means cluster algorithm to evaluate</li>
-			<li>Define possible network breaches or attack types</li>
-		</ul>
-		<h5>(Network intrusion detection, kaggle.com)</h5>
-		
-		
-	</p>
-
-
-	<h2>Machine Learning and the Future</h2>
-
-	<p>
-    Machine Learning techniques are important for intrusion detection because they are algorithms and software that are built into intrusion detection systems.  This area of research is important because every day someone is being hacked, which could be at home on a PC, or on the cell phone, or in the workplace.  This is an ongoing problem in our daily lives.  Bluetooth is one of the most vulnerable technologies to hacking and needs to be re-invented for security reasons.  The use of the Internet of Things in systems is also at risk.  As we become more dependent on these communication systems, this may eventually lead to reinforcing public or government regulations.    
-	</p>
-
-
-
-	<h2>In Summary</h2>
-
-	<p>
-    In closing, the outcome from this research is that behind solving intrusion detection and using Machine Learning, Intrusion Detection Systems are built.  Machine Learning algorithms are used to solve today's problems and guided to solving other issues as these algorithms learn in a certain way.  These algorithms are used for prediction, medical diagnosis, search engines, chatbots, data mining, biometrics, and imaging.  The idea of looking at the behavior through the eyes of a Machine that has Learned from not only data resulting in our modeling, but also from real-world testing, is intriguing.
-	</p>
-	<br>
-
-
-<h3>References</h3>
-</header>
-<p>
-    <ul style="list-style-type: none;" >
-    <li>1. Brookshear, J. Glenn. (2012). Computer Science An Overview 11th Edition. Addison-Wesley, New York, NY
-        </li><br>
-
-    <li>2. DDoS attack types & mitigation methods | Imperva. (2021, February 14). Learning Center. https://www.imperva.com/learn/ddos/ddos-attacks/</li><br>	
-    <li>3. Network intrusion detection. (n.d.). Kaggle: Your Machine Learning and Data Science Community. https://www.kaggle.com/datasets/sampadab17/network-  intrusion-detection?resource=download</li><br>
-    <li>4. Python, R. (2020, July 20). K-means clustering in Python: A practical guide. Python Tutorials – Real Python. https://realpython.com/k-means-clustering-		python/?msclkid=cf5c8572b39111eca9fc5072da6a737c
-    <li></br>
-    
-    <li>5. Ray, Susmita. (2019). A Quick Review of Machine Learning Algorithms. International Conference on Machine Learning, Big Data, Cloud and Parallel Computing (COMITCon), 35-39.
-    doi: 10.1109/COMITCon.2019.8862451
-    </li><br>
-
-    <li>6. VanderPlas, J. (2022). In depth: K-means clustering. Pythonic Perambulations. https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html</li><br>
-
-    <li>7. Zamani, M., & Movahedi, M. (2015). Machine learning techniques for intrusion detection. Ithaca: Cornell University Library, arXiv.org. Retrieved from https://proxy.cecybrary.com/login?url=https://search-proquest-com.proxy.cecybrary.com/docview/2081464968?accountid=144789
-        </li><br>
-    
-    </ul>
-    </p>
-
-
-<footer>4/21/2022 by N.Gilmore, Machine Learning Techniques, Initial Doctorate Research 2020</footer>
-
-</body>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Machine Learning and Intrusion Detection Research</title>
+      <link rel="stylesheet" type="text/css" href="D:\ngilm\Documents\individualprojfin\styles.css">
+   </head>
+   <body>
+      <h1>Machine Learning Techniques for Intrusion Detection</h1>
+      <h3>by Natalie Gilmore, 04/22/2020</h3>
+      <p>
+         Intrusion detection systems (IDS) utilize Machine Learning (ML) algorithms, Artificial Intelligence (AI) algorithms, and metrics, as a basic foundation for examining the dynamic change of data modified on a network or a host computer.  The testing perspective is to take a snapshot of data that has either been sitting on a host computer, hard drive, or in motion on a network, and then a comparison is made between past and future data.  This aids in determining when and where the cyber-attack or malicious attack originated.  From research explored, and focusing on Machine Learning, there are three types of problems that need to be solved using the data: 1) classification, 2) regression, and 3) clustering.  And from these three types, the following techniques are approached, which include both supervised and unsupervised learning (Ray., 2019, p. 1).  
+      </p>
+      <br>
+      <p>
+      <h4>Machine Learning Data Sort Types:</h4>
+      <ul>
+         <li>Classification</li>
+         <li>Regression</li>
+         <li>Clustering</li>
+      </ul>
+      </p>
+      <p>
+      <h4>Machine Learning Techniques:</h4>
+      <ul>
+         <li>Supervised Learning: both the classification and regression of the data</li>
+         <li>Unsupervised Learning: clustering of the data</li>
+      </ul>
+      </p>
+      <br>
+      <h3>Supervised vs Unsupervised Algorithms</h3>
+      <p>
+         Supervised algorithms are linear whereas unsupervised algorithms are non-linear with data manipulation.  It was found that "supervised algorithms, in general, show better classification accuracy on the data with known attacks…." (Zamani & Movahedi, 2015, p. 4).  One example of a supervised method, is the Decision Tree algorithm (Ray., 2019, p. 3).  With known results, the Decision Tree algorithm achieved the best results, with a "95% true positive rate, 1% false-positive rate" (Zamani & Movahedi, 2015, p. 4).  While this is a great result, in reality, with unseen cyber-attacks, the "detection rate of supervised methods decreases significantly" (Zamani & Movahedi, 2015, p. 4).  It was found that unsupervised algorithms have a better overall outcome, and a greater accuracy for both unseen and seen cyber-attack types (Zamani & Movahedi, 2015, p. 4).  Other examples of both supervised and unsupervised algorithms are Decision Tree, Support Vector Machines, K-Nearest Neighbor, Multilayer Perceptron, k-Means Clustering, single linkage clustering, and gamma-algorithm (Zamani & Movahedi, 2015, p. 3).
+      </p>
+      <h4>Data Manipulation:</h4>
+      <p>
+         Supervised = linear <br>
+         Unsupervised = non-linear
+      </p>
+      <h4>Machine Learning Methods:</h4>
+      <p>
+      <h5>Supervised ML:</h5>
+      <ul>
+         <li>Decision three</li>
+         <li>Support Vector Machines</li>
+         <li>K-Nearest Neighbor</li>
+         <li>Multilayer Perceptron</li>
+      </ul>
+      <h5>Unsupervised ML:</h5>
+      <ul>
+         <li>K-Means Clustering</li>
+         <li>single linkage clustering</li>
+         <li>gamma-algorithm</li>
+      </ul>
+      </p>
+      <h3>Use of Machine Learning with Intrusion Detection</h3>
+      <p>
+         Another area that seems very difficult to comprehend, is the use of Machine Learning to detect an intrusion across a very large, high traffic network.  It becomes complicated due to the varying amounts of data transmitted and received at any given time.  The advantages of using Machine Learning for large systems is the ability to 'train the algorithm' which is "to train a system with training patterns" for all types.(Zamani & Movahedi, 2015, p. 5)
+      </p>
+      <p>
+         Based on the journal literature, (Zamani & Movahedi, 2015), one has to look at the best type of algorithm to test over a TCP/IP network.  After evaluation, and considering which type of ML algorithm will perform in the most accurate manner due to seen and unseen cyber-attacks, unsupervised techniques are used.  Seen data is known data whereas unseen data is not known.  A baseline of data is used in reference to detect an anomaly, thereby seeing an intrusion.  How this is implemented and tested is by design.  One example of this is "a 2-tier anomaly-based architecture for IDS in TCP/IP networks" (Zamani & Movahedi, 2015, p.4).  See as described below.
+         <br>
+      <ul>
+         <li>Tier 1: unsupervised clustering algorithm
+            TCP/UDP: two 'clusters' are built representing normal and abnormal traffic.
+         </li>
+         <li>Research: capture network traffic, raw data packets</li>
+         <li>Tier 2: anomaly detection algorithm that learns and redefines it's accuracy based on the data available on the packet payload content.</li>
+         (Zamani & Movahedi, 2015, p.4)
+      </ul>
+      <br>
+      <ul>
+         <li>
+            <h4>Model Wifi Traffic:</h4>
+         </li>
+         <li>
+            <h5>Take snapshots of data packets on network:</h5>
+         </li>
+         <li>Seen Data: take snapshot of data using tcpdump.  See Figures 1 and 2.</li>
+         <li>Unseen Data: data to compare, current received data snapshot. </li>
+         <li>Baseline: reference to compare = Seen Data</li>
+         <li>Compare captured data (reference) to a recent view of captured data (unseen)</li>
+         <li>Anomaly: catching an issue based on k-Means Clustering</li>
+         <li>Run Seen and Unseen Data through script to sort by k-Means Cluster</li>
+         <li>Compare Seen and Unseen Data, consider what information is typical and what is the anomaly.  Test packet data count, length.</li>
+         <li>Repeat Process</li>
+      </ul>
+      <h5>Figure 1.</h5>
+      <img id="fig1" src="rd_2022-03-28 17-19-24.png">
+      <br>
+      <h5>Figure 2.</h5>
+      <img id="fig2" src="rd_2022-03-28 17-24-13r.png">
+      <br>
+      </p>
+      <br>
+      <p>
+      <h4>Methods for looking at Incoming Network Data</h4>
+      <ul>
+         <li>Use Packet Sniffer Software: Perl, Netstat, Tcpdump, etc.</li>
+         <li>Determine if data is an email, video, social media, etc.</li>
+         <li>Sort, cluster data,...</li>
+         <li>Consider Intrusion Types, DDOS.. Protocol Attacks (packets per second) (Pps), etc.</li>
+      </ul>
+      <h5>(DDoS attack types & mitigation methods | Imperva. (2021, February 14))</h5>
+      </p>
+      <p>
+      <h4>Unsupervised Learning: K-Means Algorithm</h4>
+      <ul>
+         <li>Specify the number of k of clusters to assign.</li>
+         <li>Randomly initialize k centroids.</li>
+         <li>repeat</li>
+         <li>expectation: Assign each point to its closes centroid</li>
+         <li>maximization: Compute the new centroid (mean) of each cluster.</li>
+         <li>until (until the next centroid positions do not change).</li>
+      </ul>
+      <h5>(VanderPlas, J., 2022)</h5>
+      <h4>Example of K-Means Cluster Model</h4>
+      <h5>1. Python Scikit Header</h5>
+      <p>
+      <ul class="code_box1">
+         <li>%matplotlib inline</li>
+         <li>import matplotlib.pyplot as plt</li>
+         <li>import seaborn as sns; sns.set()  # for plot styling</li>
+         <li>import numpy as np</li>
+      </ul>
+      <h5>(VanderPlas, J., 2022)</h5>
+      </p>
+      <h5>2. Generate Plot of Random Data</h5>
+      <p>
+      <ul class="code_box2">
+         <li>from sklearn.datasets.samples_generator import make_blobs</li>
+         <li>X, y_true = make_blobs(n_samples=300, centers=4,
+            cluster_std=0.60, random_state=0)
+         </li>
+         <li>plt.scatter(X[:, 0], X[:, 1], s=50);</li>
+      </ul>
+      <h5>(VanderPlas, J., 2022)</h5>
+      </p>
+      <h5>3. Separate Data into Clusters</h5>
+      <p>
+      <ul class="code_box3">
+         <li>from sklearn.cluster import KMeans</li>
+         <li>kmeans = KMeans(n_clusters=4)</li>
+         <li>kmeans.fit(X)</li>
+         <li>y_kmeans = kmeans.predict(X)</li>
+      </ul>
+      <h5>(VanderPlas, J., 2022)</h5>
+      </p>
+      </code>
+      <h5>4. Label Sorted Data Clusters</h5>
+      <p>
+      <ul class="code_box4">
+         <li>plt.scatter(X[:, 0], X[:, 1], c=y_kmeans, s=50, cmap='viridis')</li>
+         <li>centers = kmeans.cluster_centers_</li>
+         <li>plt.scatter(centers[:, 0], centers[:, 1], c='black', s=200, alpha=0.5);</li>
+      </ul>
+      <h5>(VanderPlas, J., 2022)</h5>
+      </p>
+      <h5>5. K-Means Algorithm: Expectation-Maximization</h5>
+      <p>
+      <ul class="code_box5">
+         <li>from sklearn.metrics import pairwise_distances_argmin</li>
+         <li>def find_clusters(X, n_clusters, rseed=2):</li>
+         <li># 1. Randomly choose clusters</li>
+         <li>rng = np.random.RandomState(rseed)</li>
+         <li>i = rng.permutation(X.shape[0])[:n_clusters]</li>
+         <li>centers = X[i]</li>
+         <br>
+         <li>while True:</li>
+         <li># 2a. Assign labels based on closest center</li>
+         <li>labels = pairwise_distances_argmin(X, centers)</li>
+         <li># 2b. Find new centers from means of points</li>
+         <li>new_centers = np.array([X[labels == i].mean(0)</li>
+         <li>for i in range(n_clusters)])</li>
+         <li># 2c. Check for convergence</li>
+         <li>if np.all(centers == new_centers):</li>
+         <li>    break</li>
+         <li>centers = new_centers</li>
+         <li>return centers, labels</li>
+         <li>centers, labels = find_clusters(X, 4)</li>
+         <li>plt.scatter(X[:, 0], X[:, 1], c=labels,</li>
+         <li>s=50, cmap='viridis');</li>
+      </ul>
+      <h5>(VanderPlas, J.,2022)</h5>
+      </p>
+      <p>
+      <h4>Modeling Server Data</h4>
+      <ul>
+         <li>Use example server data from www.kaggle.com</li>
+         <li>Sort incoming data from source and destination IP/name</li>
+         <li>Sort protocol type: TCP, UDP, ICMP, etc.</li>
+         <li>Compute averages: time, duration, packet sizes, etc</li>
+         <li>Implement k-means cluster algorithm to evaluate</li>
+         <li>Define possible network breaches or attack types</li>
+      </ul>
+      <h5>(Network intrusion detection, kaggle.com)</h5>
+      </p>
+      <h2>Machine Learning and the Future</h2>
+      <p>
+         Machine Learning techniques are important for intrusion detection because they are algorithms and software that are built into intrusion detection systems.  This area of research is important because every day someone is being hacked, which could be at home on a PC, or on the cell phone, or in the workplace.  This is an ongoing problem in our daily lives.  Bluetooth is one of the most vulnerable technologies to hacking and needs to be re-invented for security reasons.  The use of the Internet of Things in systems is also at risk.  As we become more dependent on these communication systems, this may eventually lead to reinforcing public or government regulations.    
+      </p>
+      <h2>In Summary</h2>
+      <p>
+         In closing, the outcome from this research is that behind solving intrusion detection and using Machine Learning, Intrusion Detection Systems are built.  Machine Learning algorithms are used to solve today's problems and guided to solving other issues as these algorithms learn in a certain way.  These algorithms are used for prediction, medical diagnosis, search engines, chatbots, data mining, biometrics, and imaging.  The idea of looking at the behavior through the eyes of a Machine that has Learned from not only data resulting in our modeling, but also from real-world testing, is intriguing.
+      </p>
+      <br>
+      <h3>References</h3>
+      </header>
+      <p>
+      <ul style="list-style-type: none;" >
+         <li>1. Brookshear, J. Glenn. (2012). Computer Science An Overview 11th Edition. Addison-Wesley, New York, NY
+         </li>
+         <br>
+         <li>2. DDoS attack types & mitigation methods | Imperva. (2021, February 14). Learning Center. https://www.imperva.com/learn/ddos/ddos-attacks/</li>
+         <br>	
+         <li>3. Network intrusion detection. (n.d.). Kaggle: Your Machine Learning and Data Science Community. https://www.kaggle.com/datasets/sampadab17/network-  intrusion-detection?resource=download</li>
+         <br>
+         <li>4. Python, R. (2020, July 20). K-means clustering in Python: A practical guide. Python Tutorials – Real Python. https://realpython.com/k-means-clustering-		python/?msclkid=cf5c8572b39111eca9fc5072da6a737c
+         <li></br>
+         <li>5. Ray, Susmita. (2019). A Quick Review of Machine Learning Algorithms. International Conference on Machine Learning, Big Data, Cloud and Parallel Computing (COMITCon), 35-39.
+            doi: 10.1109/COMITCon.2019.8862451
+         </li>
+         <br>
+         <li>6. VanderPlas, J. (2022). In depth: K-means clustering. Pythonic Perambulations. https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html</li>
+         <br>
+         <li>7. Zamani, M., & Movahedi, M. (2015). Machine learning techniques for intrusion detection. Ithaca: Cornell University Library, arXiv.org. Retrieved from https://proxy.cecybrary.com/login?url=https://search-proquest-com.proxy.cecybrary.com/docview/2081464968?accountid=144789
+         </li>
+         <br>
+      </ul>
+      </p>
+      <footer>4/21/2022 by N.Gilmore, Machine Learning Techniques, Initial Doctorate Research 2020</footer>
+   </body>
 </html>
