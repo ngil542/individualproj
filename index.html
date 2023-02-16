@@ -57,7 +57,7 @@
 		</ul>
 		</p>
 		<br>
-		<h3>Use of Machine Learning with Intrusion Detection</h3>
+		<h3>Use of K-Means Clustering with Machine Learning and Intrusion Detection</h3>
 		<p>
 			Another area that seems very difficult to comprehend, is the use of Machine Learning to detect an intrusion across a very large, high traffic network.  It becomes complicated due to the varying amounts of data transmitted and received at any given time.  The advantages of using Machine Learning for large systems is the ability to 'train the algorithm' which is "to train a system with training patterns" for all types. (Zamani & Movahedi, 2015, p. 5)
 		</p>
@@ -113,77 +113,14 @@
 			<li>until (until the next centroid positions do not change).</li>
 		</ul>
 		<h5>(VanderPlas, J., 2022)</h5>
-		<h4>Example of K-Means Cluster Model</h4>
-		<h5>1. Python Scikit Header</h5>
+		<h4>Example of K-Means Cluster Model Output</h4>
+		<h5>Figure 3. N-Observations are sorted by their similarities into their respective clusters
+			with each centroid.
+		</h5>
+		<img id="fig3" src="Screenshot 2023-02-16 125833K-Means.png">
+		<br>
 		<p>
-		<ul class="code_box1">
-			<li>%matplotlib inline</li>
-			<li>import matplotlib.pyplot as plt</li>
-			<li>import seaborn as sns; sns.set()  # for plot styling</li>
-			<li>import numpy as np</li>
-		</ul>
-		<h5>(VanderPlas, J., 2022)</h5>
-		</p>
-		<h5>2. Generate Plot of Random Data</h5>
-		<p>
-		<ul class="code_box2">
-			<li>from sklearn.datasets.samples_generator import make_blobs</li>
-			<li>X, y_true = make_blobs(n_samples=300, centers=4,
-				cluster_std=0.60, random_state=0)
-			</li>
-			<li>plt.scatter(X[:, 0], X[:, 1], s=50);</li>
-		</ul>
-		<h5>(VanderPlas, J., 2022)</h5>
-		</p>
-		<h5>3. Separate Data into Clusters</h5>
-		<p>
-		<ul class="code_box3">
-			<li>from sklearn.cluster import KMeans</li>
-			<li>kmeans = KMeans(n_clusters=4)</li>
-			<li>kmeans.fit(X)</li>
-			<li>y_kmeans = kmeans.predict(X)</li>
-		</ul>
-		<h5>(VanderPlas, J., 2022)</h5>
-		</p>
-		</code>
-		<h5>4. Label Sorted Data Clusters</h5>
-		<p>
-		<ul class="code_box4">
-			<li>plt.scatter(X[:, 0], X[:, 1], c=y_kmeans, s=50, cmap='viridis')</li>
-			<li>centers = kmeans.cluster_centers_</li>
-			<li>plt.scatter(centers[:, 0], centers[:, 1], c='black', s=200, alpha=0.5);</li>
-		</ul>
-		<h5>(VanderPlas, J., 2022)</h5>
-		</p>
-		<h5>5. K-Means Algorithm: Expectation-Maximization</h5>
-		<p>
-		<ul class="code_box5">
-			<li>from sklearn.metrics import pairwise_distances_argmin</li>
-			<li>def find_clusters(X, n_clusters, rseed=2):</li>
-			<li># 1. Randomly choose clusters</li>
-			<li>rng = np.random.RandomState(rseed)</li>
-			<li>i = rng.permutation(X.shape[0])[:n_clusters]</li>
-			<li>centers = X[i]</li>
-			<br>
-			<li>while True:</li>
-			<li># 2a. Assign labels based on closest center</li>
-			<li>labels = pairwise_distances_argmin(X, centers)</li>
-			<li># 2b. Find new centers from means of points</li>
-			<li>new_centers = np.array([X[labels == i].mean(0)</li>
-			<li>for i in range(n_clusters)])</li>
-			<li># 2c. Check for convergence</li>
-			<li>if np.all(centers == new_centers):</li>
-			<li>    break</li>
-			<li>centers = new_centers</li>
-			<li>return centers, labels</li>
-			<li>centers, labels = find_clusters(X, 4)</li>
-			<li>plt.scatter(X[:, 0], X[:, 1], c=labels,</li>
-			<li>s=50, cmap='viridis');</li>
-		</ul>
-		<h5>(VanderPlas, J.,2022)</h5>
-		</p>
-		<p>
-		<h4>Modeling Server Data</h4>
+		<h4>Ideas for Network Data Modeling:</h4>
 		<ul>
 			<li>Use example server data from www.kaggle.com</li>
 			<li>Sort incoming data from source and destination IP/name</li>
