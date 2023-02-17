@@ -10,10 +10,10 @@
 	</head>
 	<body>
 		<h1>Machine Learning Techniques for Intrusion Detection</h1>
-		<h3>by Natalie Gilmore, Revised: 02/15/2023</h3>
+		<h3>by Natalie Gilmore, Revised: 02/16/2023</h3>
 		<br>
 		<p>
-			Intrusion detection systems (IDS) utilize Machine Learning (ML) algorithms, Artificial Intelligence (AI) algorithms, and metrics, as a basic foundation for examining the dynamic change of data modified over a network or on a host computer. The testing perspective is to take a snapshot of the data that has either been sitting on a host computer, hard drive, or in motion on a network, and then make a comparison between past and future data. This aids in determining when and where the Cyber attack or malicious attack originated. From research explored, and focusing on Machine Learning, three types of data sorting categories are used which are based on both supervised and unsupervised learning.  The sorting categories from supervised and unsupervised learning are, classification, regression, and clustering, respectively. (Ray., 2019, p. 1).  
+			Intrusion detection systems (IDS) utilize Machine Learning (ML) algorithms, Artificial Intelligence (AI) algorithms, and metrics, as a basic foundation for examining the dynamic change of data modified over a network or on a host computer.  The testing perspective is to take a snapshot of the data that has either been sitting on a host computer, hard drive, or in motion on a network, and then make a comparison between past and future data.  This aids in determining when and where the cyber-attack or malicious attack originated.  From research explored, and focusing on Machine Learning, three types of data sorting categories are used which are based on both supervised and unsupervised learning.  The sorting categories from supervised and unsupervised learning are, classification, regression, and clustering, respectively.<sup>4</sup> 
 		</p>
 		<br>
 		<p>
@@ -31,38 +31,16 @@
 		<br>
 		<h3>Supervised vs Unsupervised Algorithms</h3>
 		<p>
-			Supervised algorithms are linear whereas unsupervised algorithms are non-linear with data manipulation.  It was found that "supervised algorithms, in general, show better classification accuracy on the data with known attacks…." (Zamani & Movahedi, 2015, p. 4).  One example of a supervised method is the Decision Tree algorithm (Ray., 2019, p. 3).  With known results, the Decision Tree algorithm achieved the best results, with a "95% true positive rate, 1% false-positive rate" (Zamani & Movahedi, 2015, p. 4).  While this is a great result, in reality, with unseen cyber-attacks, the "detection rate of supervised methods decreases significantly" (Zamani & Movahedi, 2015, p. 4).  It was found that unsupervised algorithms have a better overall outcome, and a greater accuracy for both unseen and seen cyber-attack types (Zamani & Movahedi, 2015, p. 4).  Other examples of both supervised and unsupervised algorithms are Decision Tree, Support Vector Machines, K-Nearest Neighbor, Multilayer Perceptron, k-Means Clustering, single linkage clustering, and gamma-algorithm (Zamani & Movahedi, 2015, p. 3).
-		</p>
-		<br>
-		<h4>Data Manipulation:</h4>
-		<p>
-			Supervised = linear <br>
-			Unsupervised = non-linear
-		</p>
-		<br>
-		<h4>Machine Learning Methods:</h4>
-		<p>
-		<h5>Supervised ML:</h5>
-		<ul>
-			<li>Decision three</li>
-			<li>Support Vector Machines</li>
-			<li>K-Nearest Neighbor</li>
-			<li>Multilayer Perceptron</li>
-		</ul>
-		<h5>Unsupervised ML:</h5>
-		<ul>
-			<li>K-Means Clustering</li>
-			<li>single linkage clustering</li>
-			<li>gamma-algorithm</li>
-		</ul>
+			Supervised algorithms are linear whereas unsupervised algorithms are non-linear with data manipulation.  It was found that "supervised algorithms, in general, show better classification accuracy on the data with known attacks…."<sup>6</sup>  One example of a supervised method, is the Decision Tree algorithm.<sup>4</sup>   With known results, the Decision Tree algorithm achieved the best results, with a "95% true positive rate, 1% false-positive rate".<sup>6</sup>  While this is a great result, in reality, with unseen cyber-attacks, the "detection rate of supervised methods decreases significantly."<sup>6</sup>   It was found that unsupervised algorithms have a better overall outcome, and a greater accuracy for both unseen and seen cyber-attack types.  Other examples of both supervised and unsupervised algorithms are Decision Tree, Support Vector Machines, K-Nearest Neighbor, Multilayer Perceptron, k-Means Clustering, single linkage clustering, and gamma-algorithm.<sup>6</sup> 
 		</p>
 		<br>
 		<h3>Use of K-Means Clustering with Machine Learning and Intrusion Detection</h3>
 		<p>
-			Another area that seems very difficult to comprehend, is the use of Machine Learning to detect an intrusion across a very large, high traffic network.  It becomes complicated due to the varying amounts of data transmitted and received at any given time.  The advantages of using Machine Learning for large systems is the ability to 'train the algorithm' which is "to train a system with training patterns" for all types. (Zamani & Movahedi, 2015, p. 5)
+			Another area that seems very difficult to comprehend, is the use of Machine Learning to detect an intrusion across a very large, high traffic network.  It becomes complicated due to the varying amounts of data transmitted and received at any given time.  The advantages of using Machine Learning for large systems is the ability to 'train the algorithm' which is "to train a system with training patterns" for all types.<sup>6</sup>
 		</p>
 		<p>
-			Based on the journal literature, (Zamani & Movahedi, 2015), one has to look at the best type of algorithm to test over a TCP/IP network.  After further evaluation and considering which type of ML algorithm will perform in the most accurate manner due to seen and unseen cyber-attacks, unsupervised techniques are used.  Seen data is known data whereas unseen data is not known.  A baseline of data is used in reference to detect an anomaly, thereby seeing an intrusion.  How this is implemented and tested is by design.  One example of this is "a 2-tier anomaly-based architecture for IDS in TCP/IP networks" (Zamani & Movahedi, 2015, p.4).  See as described below.
+			Based on the journal literature, from Zamani & Movahedi, one has to look at the best type of algorithm to test over a TCP/IP network.  After evaluation, and considering which type of ML algorithm will perform in the most accurate manner due to seen and unseen cyber-attacks, unsupervised techniques are used.  Seen data is known data whereas unseen data is not known.  A baseline of data is used in reference to detect an anomaly, thereby seeing an intrusion.  How this is implemented and tested is by design.  One example of this is "a 2-tier anomaly-based architecture for IDS in TCP/IP networks."<sup>6</sup>  See as described below. 
+		</p>
 			<br><br>
 		<ul>
 			<li><b>Tier 1:</b> unsupervised clustering algorithm
@@ -70,12 +48,12 @@
 			</li>
 			<li><b>Research:</b> capture network traffic, raw data packets</li>
 			<li><b>Tier 2:</b> anomaly detection algorithm that learns and redefines its accuracy based on the data available on the packet payload content.</li>
-			(Zamani & Movahedi, 2015, p.4)
 		</ul>
-		<h4>Model Wifi Traffic:</h4>
+		<h4>Example: Model Network Traffic Data:</h4>
 		<ul>
-			<li>Take snapshots of data packets on network</li>
-			<li>Seen Data: take snapshot of data using tcpdump.  See Figures 1 and 2.</li>
+			<li>Capture snapshots of data packets on network</li>
+			<li>Seen Data: take snapshot of data using tcpdump.  See Figure 1 for an example snapshot.</li>
+				
 			<li>Unseen Data: data to compare, current received data snapshot. </li>
 			<li>Baseline: reference to compare = Seen Data</li>
 			<li>Compare captured data (reference) to a recent view of captured data (unseen)</li>
