@@ -41,7 +41,7 @@
 		<p>
 			Based on the journal literature, from Zamani & Movahedi, one has to look at the best type of algorithm to test over a TCP/IP network.  After evaluation, and considering which type of ML algorithm will perform in the most accurate manner due to seen and unseen cyber-attacks, unsupervised techniques are used.  Seen data is known data whereas unseen data is not known.  A baseline of data is used in reference to detect an anomaly, thereby seeing an intrusion.  How this is implemented and tested is by design.  One example of this is "a 2-tier anomaly-based architecture for IDS in TCP/IP networks."<sup>6</sup>  See as described below. 
 		</p>
-			<br><br>
+		<br>
 		<ul>
 			<li><b>Tier 1:</b> unsupervised clustering algorithm
 				TCP/UDP: two 'clusters' are built representing normal and abnormal traffic.
@@ -49,12 +49,13 @@
 			<li><b>Research:</b> capture network traffic, raw data packets</li>
 			<li><b>Tier 2:</b> anomaly detection algorithm that learns and redefines its accuracy based on the data available on the packet payload content.</li>
 		</ul>
+		<br>
 		<h4>Example: Model Network Traffic Data:</h4>
 		<ul>
 			<li>Capture snapshots of data packets on network</li>
 			<li>Seen Data: take snapshot of data using tcpdump.  See Figure 1 for an example snapshot.</li>
+			<li><b>Other Considerations:</b></li>
 				<ul>
-					<li><b>Other Considerations:</b></li>
 					<li>Determine if data is an email, video, social media, etcetera.</li>
 					<li>Consider Intrusion Types, DDOS.. Protocol Attacks (packets per second) (Pps), etcetera.</li>
 				</ul>
@@ -83,7 +84,7 @@
 		<h4>Recall K-Means Cluster</h4>
 		<p>
 			When looking at the acquired data from a sniffer, these observations can be collectively n-observations which can be sorted into clusters by their categories.  The K-Means Cluster algorithm can be used to look at n-observations, determine the number of k clusters, then assign the data that is similar to a corresponding centroid.  For example, Figure 2 might represent seen data and consider this to be a baseline for the network with the data clustered into its categories.  From this point forward, one can use Machine Learning to aid in understanding the change in data from a next snapshot comparison.  This aids in identifying possible intrusion types at intervals on a network.
-
+		<br>
 		<h4>Figure 2. N-Observations are sorted by their similarities into their respective clusters
 			with each centroid.
 		</h4>
