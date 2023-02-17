@@ -53,64 +53,45 @@
 		<ul>
 			<li>Capture snapshots of data packets on network</li>
 			<li>Seen Data: take snapshot of data using tcpdump.  See Figure 1 for an example snapshot.</li>
-				
+				<ul>
+					<li><b>Other Considerations:</b></li>
+					<li>Determine if data is an email, video, social media, etcetera.</li>
+					<li>Consider Intrusion Types, DDOS.. Protocol Attacks (packets per second) (Pps), etcetera.</li>
+				</ul>
 			<li>Unseen Data: data to compare, current received data snapshot. </li>
 			<li>Baseline: reference to compare = Seen Data</li>
 			<li>Compare captured data (reference) to a recent view of captured data (unseen)</li>
 			<li>Anomaly: catching an issue based on k-Means Clustering</li>
+				<ul>
+					<li>Define the number of categories for each centroid</li>
+					<li>Use K-Means clustering to categorize data</li>
+				</ul>
 			<li>Run Seen and Unseen Data through script to sort by k-Means Cluster</li>
+				<ul>
+					<li>Compare K-Means clustering of seen and unseen data</li>
+					<li>Identify possible data breach</li>
+				</ul>
 			<li>Compare Seen and Unseen Data, consider what information is typical and what is the anomaly.  Test packet data count, length.</li>
 			<li>Repeat Process</li>
 		</ul>
-		<h5>Figure 1.</h5>
-		<img id="fig1" src="rd_2022-03-28 17-19-24.png">
 		<br>
-		<h5>Figure 2.</h5>
-		<img id="fig2" src="rd_2022-03-28 17-24-13r.png">
+		<h5>Figure 1. Example of a snapshot using Tcpdump</h5>
+		<img id="fig1" src="rd_2022-03-28 17-24-13r.png">
 		<br>
 		</p>
 		<br>
+		<h4>Recall K-Means Cluster</h4>
 		<p>
-		<h4>Methods for looking at Incoming Network Data</h4>
-		<ul>
-			<li>Use Packet Sniffer Software: Perl, Netstat, Tcpdump, etc.</li>
-			<li>Determine if data is an email, video, social media, etc.</li>
-			<li>Sort, cluster data,...</li>
-			<li>Consider Intrusion Types, DDOS.. Protocol Attacks (packets per second) (Pps), etc.</li>
-		</ul>
-		<h5>(DDoS attack types & mitigation methods | Imperva. (2021, February 14))</h5>
-		</p>
-		<p>
-		<h4>Unsupervised Learning: K-Means Algorithm</h4>
-		<ul>
-			<li>Specify the number of k of clusters to assign.</li>
-			<li>Randomly initialize k centroids.</li>
-			<li>repeat</li>
-			<li>expectation: Assign each point to its closest centroid.</li>
-			<li>maximization: Compute the new centroid (mean) of each cluster.</li>
-			<li>until (until the next centroid positions do not change).</li>
-		</ul>
-		<h5>(VanderPlas, J., 2022)</h5>
-		<h4>Example of K-Means Cluster Model Output</h4>
-		<h5>Figure 3. N-Observations are sorted by their similarities into their respective clusters
+			When looking at the acquired data from a sniffer, these observations can be collectively n-observations which can be sorted into clusters by their categories.  The K-Means Cluster algorithm can be used to look at n-observations, determine the number of k clusters, then assign the data that is similar to a corresponding centroid.  For example, Figure 2 might represent seen data and consider this to be a baseline for the network with the data clustered into its categories.  From this point forward, one can use Machine Learning to aid in understanding the change in data from a next snapshot comparison.  This aids in identifying possible intrusion types at intervals on a network.
+
+		<h5>Figure 2. N-Observations are sorted by their similarities into their respective clusters
 			with each centroid.
 		</h5>
-		<img id="fig3" src="Screenshot 2023-02-16 125833K-Means.png">
-		<h5>(VanderPlas, J., 2022)</h5>
+		<img id="fig2" src="Screenshot 2023-02-16 125833K-Means.png">
 		<br>
-		<p>
-		<h4>Ideas for Network Data Modeling:</h4>
-		<ul>
-			<li>Use example server data from www.kaggle.com</li>
-			<li>Sort incoming data from source and destination IP/name</li>
-			<li>Sort protocol type: TCP, UDP, ICMP, etc.</li>
-			<li>Compute averages: time, duration, packet sizes, etc</li>
-			<li>Implement k-means cluster algorithm to evaluate</li>
-			<li>Define possible network breaches or attack types</li>
-		</ul>
-		<h5>(Network intrusion detection, kaggle.com)</h5>
 		</p>
-		<h2>Machine Learning and the Future</h2>
+		<br>
+		<h2>Intrusion Detection and the Future</h2>
 		<p>
 			Machine Learning techniques are important for intrusion detection because they are algorithms and software that are built into intrusion detection systems.  This area of research is important because every day someone is being hacked, which could be at home on a PC, on a cell phone, or in the workplace.  This is an ongoing problem in our daily lives.  Bluetooth is one of the most vulnerable technologies to hacking and needs to be re-invented for security reasons.  The use of the Internet of Things in systems is also at risk.  As we become more dependent on these communication systems, this may eventually lead to reinforcing public or government regulations.    
 		</p>
@@ -123,26 +104,26 @@
 		</header>
 		<p>
 		<ul style="list-style-type: none;" >
-			<li>1. Brookshear, J. Glenn. (2012). Computer Science An Overview 11th Edition. Addison-Wesley, New York, NY
+			<li>1. J Glenn Brookshear, Smith DT, Brylow D. Computer Science : An Overview. Addison-Wesley; 2012.
 			</li>
 			<br>
-			<li>2. DDoS attack types & mitigation methods | Imperva. (2021, February 14). Learning Center. https://www.imperva.com/learn/ddos/ddos-attacks/</li>
+			<li>2. Imperva. DDoS Attack Types & Mitigation Methods | Imperva. Learning Center. Published 2021. https://www.imperva.com/learn/ddos/ddos-attacks/
+			</li>
 			<br>	
-			<li>3. Network intrusion detection. (n.d.). Kaggle: Your Machine Learning and Data Science Community. https://www.kaggle.com/datasets/sampadab17/network-  intrusion-detection?resource=download</li>
-			<br>
-			<li>4. Python, R. (2020, July 20). K-means clustering in Python: A practical guide. Python Tutorials – Real Python. https://realpython.com/k-means-clustering-		python/?msclkid=cf5c8572b39111eca9fc5072da6a737c
-			<li></br>
-			<li>5. Ray, Susmita. (2019). A Quick Review of Machine Learning Algorithms. International Conference on Machine Learning, Big Data, Cloud and Parallel Computing (COMITCon), 35-39.
-				doi: 10.1109/COMITCon.2019.8862451
+			<li>3. Python R. K-Means Clustering in Python: A Practical Guide - Real Python. realpython.com. Accessed February 16, 2023. https://realpython.com/k-means-clustering-python/?msclkid=cf5c8572b39111eca9fc5072da6a737c	
 			</li>
 			<br>
-			<li>6. VanderPlas, J. (2022). In depth: K-means clustering. Pythonic Perambulations. https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html</li>
+			<li>4. Ray S. A Quick Review of Machine Learning Algorithms. IEEE Xplore. doi:https://doi.org/10.1109/COMITCon.2019.8862451
+			</li>
+			</br>
+			<li>5. VanderPlas J. In Depth: k-Means Clustering | Python Data Science Handbook. Github.io. Published 2019. https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html
+			</li>
 			<br>
-			<li>7. Zamani, M., & Movahedi, M. (2015). Machine learning techniques for intrusion detection. Ithaca: Cornell University Library, arXiv.org. Retrieved from https://proxy.cecybrary.com/login?url=https://search-proquest-com.proxy.cecybrary.com/docview/2081464968?accountid=144789
+			<li>6. Zamani M, Movahedi M. Machine Learning Techniques for Intrusion Detection. arXiv:13122177 [cs]. Published online May 9, 2015. https://arxiv.org/abs/1312.2177
 			</li>
 			<br>
 		</ul>
 		</p>
-		<footer>4/21/2022 by N.Gilmore, Machine Learning Techniques, Initial Doctorate Research 2020</footer>
+		<footer>Updated: 02/16/2023 by N.Gilmore, Machine Learning Techniques, Initial Doctorate Research 2020</footer>
 	</body>
 </html>
