@@ -13,7 +13,7 @@
 		<h3>by Natalie Gilmore, Revised: 02/16/2023</h3>
 		<br>
 		<p>
-			Intrusion detection systems (IDS) utilize Machine Learning (ML) algorithms, Artificial Intelligence (AI) algorithms, and metrics, as a basic foundation for examining the dynamic change of data modified over a network or on a host computer.  The testing perspective is to take a snapshot of the data that has either been sitting on a host computer, hard drive, or in motion on a network, and then make a comparison between past and future data.  This aids in determining when and where the cyber-attack or malicious attack originated.  From research explored, and focusing on Machine Learning, three types of data sorting categories are used which are based on both supervised and unsupervised learning.  The sorting categories from supervised and unsupervised learning are, classification, regression, and clustering, respectively.<sup>4</sup> 
+			Intrusion detection systems (IDS) utilize Machine Learning (ML) algorithms, Artificial Intelligence (AI) algorithms, and metrics, as a basic foundation for examining the dynamic change of data modified over a network or on a host computer.  The testing perspective is to take a snapshot of the data that has either been sitting on a host computer, hard drive, or in motion on a network, and then make a comparison between past and future data.  This aids in determining when and where the cyber-attack or malicious attack originated.  From research explored, and focusing on Machine Learning, three types of data sorting categories are used which are based on both supervised and unsupervised learning.  The sorting categories from supervised and unsupervised learning are, classification, regression, and clustering, respectively [4]. 
 		</p>
 		<br>
 		<p>
@@ -28,18 +28,19 @@
 			<li>Clustering</li>
 		</ul>
 		</p>
-		<br>
 		<h3>Supervised vs Unsupervised Algorithms</h3>
 		<p>
-			Supervised algorithms are linear whereas unsupervised algorithms are non-linear with data manipulation.  It was found that "supervised algorithms, in general, show better classification accuracy on the data with known attacks…."<sup>6</sup>  One example of a supervised method, is the Decision Tree algorithm.<sup>4</sup>   With known results, the Decision Tree algorithm achieved the best results, with a "95% true positive rate, 1% false-positive rate".<sup>6</sup>  While this is a great result, in reality, with unseen cyber-attacks, the "detection rate of supervised methods decreases significantly."<sup>6</sup>   It was found that unsupervised algorithms have a better overall outcome, and a greater accuracy for both unseen and seen cyber-attack types.  Other examples of both supervised and unsupervised algorithms are Decision Tree, Support Vector Machines, K-Nearest Neighbor, Multilayer Perceptron, k-Means Clustering, single linkage clustering, and gamma-algorithm.<sup>6</sup> 
+			Supervised algorithms are linear whereas unsupervised algorithms are non-linear with data manipulation.  It was found from [6], in general, that supervised algorithms, show better classification accuracy on the data with known cyber-attacks.  For this research, the supervised method chosen is the Decision Tree algorithm because this algorithm achieved the best results, with a "95% true positive rate, 1% false-positive rate [4], [6]."  
+
+While this is a good result, using the Decision Tree algorithm and it being a supervised algorithm, in reality, with unseen cyber-attacks, the "detection rate of supervised methods decreases significantly [6]."   It was found that unsupervised algorithms have a better overall outcome, and a greater accuracy for both unseen and seen cyber-attack types.  Examples of supervised algorithms are the Decision Tree, Support Vector Machines, K-Nearest Neighbor, Multilayer Perceptron, and the gamma-algorithm, whereas the k-Means Clustering, single linkage clustering, and neural network, are unsupervised learning algorithms [6]. 
 		</p>
 		<br>
 		<h3>Use of K-Means Clustering with Machine Learning and Intrusion Detection</h3>
 		<p>
-			Another area that seems very difficult to comprehend, is the use of Machine Learning to detect an intrusion across a very large, high traffic network.  It becomes complicated due to the varying amounts of data transmitted and received at any given time.  The advantages of using Machine Learning for large systems is the ability to 'train the algorithm' which is "to train a system with training patterns" for all types.<sup>6</sup>
+			Another area that seems very difficult to comprehend, is the use of Machine Learning to detect an intrusion across a very large, high traffic network.  It becomes complicated due to the varying amounts of data transmitted and received at any given time.  The advantages of using Machine Learning for large systems is the ability to 'train the algorithm' which is "to train a system with training patterns" for all types [6].
 		</p>
 		<p>
-			Based on the journal literature, from Zamani & Movahedi, one has to look at the best type of algorithm to test over a TCP/IP network.  After evaluation, and considering which type of ML algorithm will perform in the most accurate manner due to seen and unseen cyber-attacks, unsupervised techniques are used.  Seen data is known data whereas unseen data is not known.  A baseline of data is used in reference to detect an anomaly, thereby seeing an intrusion.  How this is implemented and tested is by design.  One example of this is "a 2-tier anomaly-based architecture for IDS in TCP/IP networks."<sup>6</sup>  See as described below. 
+			Based on the journal literature, from Zamani & Movahedi, one has to look at the best type of algorithm to test over a TCP/IP network.  After evaluation, and considering which type of ML algorithm will perform in the most accurate manner due to seen and unseen cyber-attacks, unsupervised techniques are used.  Seen data is known data whereas unseen data is not known.  A baseline of data is used in reference to detect an anomaly, thereby seeing an intrusion.  How this is implemented and tested is by design.  One example of this is "a 2-tier anomaly-based architecture for IDS in TCP/IP networks [6]."  See as described below. 
 		</p>
 		<br>
 		<ul>
@@ -105,26 +106,26 @@
 		</header>
 		<p>
 		<ul style="list-style-type: none;" >
-			<li>1. J Glenn Brookshear, Smith DT, Brylow D. Computer Science : An Overview. Addison-Wesley; 2012.
+			<li>[1] J Glenn Brookshear, Smith DT, Brylow D. Computer Science : An Overview. Addison-Wesley; 2012.
 			</li>
 			<br>
-			<li>2. Imperva. DDoS Attack Types & Mitigation Methods | Imperva. Learning Center. Published 2021. https://www.imperva.com/learn/ddos/ddos-attacks/
+			<li>[2] Imperva. DDoS Attack Types & Mitigation Methods | Imperva. Learning Center. Published 2021. https://www.imperva.com/learn/ddos/ddos-attacks/
 			</li>
 			<br>	
-			<li>3. Python R. K-Means Clustering in Python: A Practical Guide - Real Python. realpython.com. Accessed February 16, 2023. https://realpython.com/k-means-clustering-python/?msclkid=cf5c8572b39111eca9fc5072da6a737c	
+			<li>[3] Python R. K-Means Clustering in Python: A Practical Guide - Real Python. realpython.com. Accessed February 16, 2023. https://realpython.com/k-means-clustering-python/?msclkid=cf5c8572b39111eca9fc5072da6a737c	
 			</li>
 			<br>
-			<li>4. Ray S. A Quick Review of Machine Learning Algorithms. IEEE Xplore. doi:https://doi.org/10.1109/COMITCon.2019.8862451
+			<li>[4] Ray S. A Quick Review of Machine Learning Algorithms. IEEE Xplore. doi:https://doi.org/10.1109/COMITCon.2019.8862451
 			</li>
 			</br>
-			<li>5. VanderPlas J. In Depth: k-Means Clustering | Python Data Science Handbook. Github.io. Published 2019. https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html
+			<li>[5] VanderPlas J. In Depth: k-Means Clustering | Python Data Science Handbook. Github.io. Published 2019. https://jakevdp.github.io/PythonDataScienceHandbook/05.11-k-means.html
 			</li>
 			<br>
-			<li>6. Zamani M, Movahedi M. Machine Learning Techniques for Intrusion Detection. arXiv:13122177 [cs]. Published online May 9, 2015. https://arxiv.org/abs/1312.2177
+			<li>[6] Zamani M, Movahedi M. Machine Learning Techniques for Intrusion Detection. arXiv:13122177 [cs]. Published online May 9, 2015. https://arxiv.org/abs/1312.2177
 			</li>
 			<br>
 		</ul>
 		</p>
-		<footer>Updated: 02/16/2023 by N.Gilmore, Machine Learning Techniques, Initial Doctorate Research 2020</footer>
+		<footer>Updated: 03/22/2023 by N.Gilmore, Machine Learning Techniques, Initial Doctorate Research 2020</footer>
 	</body>
 </html>
